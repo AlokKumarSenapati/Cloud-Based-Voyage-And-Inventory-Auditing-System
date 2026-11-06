@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cloud-voyage-app
+    restart: always
+    ports:
+      - "80:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - RDS_ENDPOINT=${RDS_ENDPOINT:-db}
+      - RDS_DB_NAME=${RDS_DB_NAME:-cloud_voyage_audit}
+      - RDS_USERNAME=${RDS_USERNAME:-cloudvoyage_app}
+      - RDS_PASSWORD=${RDS_PASSWORD:-Password123}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME:-cloud-voyage-audit-reports}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.4
+    container_name: cloud-voyage-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: cloud_voyage_audit
+      MYSQL_USER: cloudvoyage_app
+      MYSQL_PASSWORD: Password123
+      MYSQL_ROOT_PASSWORD: RootPassword123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pRootPassword123"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql_data:
+

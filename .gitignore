@@ -1,0 +1,27 @@
+# Java / Spring Boot
+backend/target/
+target/
+*.class
+.maven-cache/
+backend/.maven-cache/
+.mvn/wrapper/maven-wrapper.jar
+
+# Node / React
+frontend/node_modules/
+node_modules/
+frontend/dist/
+
+# Environment secrets & keys
+.env
+.env.*
+!*.example
+*.pem
+
+# IDE and OS files
+.idea/
+.vscode/
+*.iml
+Thumbs.db
+.DS_Store
+*.log
+

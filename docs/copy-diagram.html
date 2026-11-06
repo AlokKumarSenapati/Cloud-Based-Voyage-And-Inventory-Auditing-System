@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Architecture Diagram - Cloud Voyage</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #f8fafc;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .top-bar {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      background: #1e293b;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+    .btn-secondary:hover {
+      background: #f1f5f9;
+    }
+    .notice {
+      color: #15803d;
+      font-weight: 600;
+      display: none;
+      margin-left: 10px;
+    }
+    .diagram-container {
+      background: #ffffff;
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      max-width: 1140px;
+      width: 100%;
+    }
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <button class="btn" onclick="copyImageToClipboard()">📋 Copy Image to Clipboard</button>
+    <button class="btn btn-secondary" onclick="downloadPNG()">💾 Download as PNG</button>
+    <span class="notice" id="notice">✅ Copied! Now press Ctrl + V in MS Word!</span>
+  </div>
+
+  <div class="diagram-container" id="svgWrapper">
+    <!-- SVG Content Embedded -->
+    <img id="svgImg" src="academic-architecture-diagram.svg" style="width:100%; height:auto;" />
+  </div>
+
+  <!-- Hidden Canvas for rasterization -->
+  <canvas id="exportCanvas" style="display:none;"></canvas>
+
+  <script>
+    async function getBlob() {
+      const img = document.getElementById('svgImg');
+      const canvas = document.getElementById('exportCanvas');
+      // High resolution scale factor
+      const scale = 2;
+      canvas.width = 1100 * scale;
+      canvas.height = 680 * scale;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      return new Promise((resolve) => {
+        const imageObj = new Image();
+        imageObj.crossOrigin = 'anonymous';
+        imageObj.onload = function() {
+          ctx.drawImage(imageObj, 0, 0, canvas.width, canvas.height);
+          canvas.toBlob(blob => resolve(blob), 'image/png');
+        };
+        imageObj.src = 'academic-architecture-diagram.svg';
+      });
+    }
+
+    async function copyImageToClipboard() {
+      try {
+        const blob = await getBlob();
+        await navigator.clipboard.write([
+          new ClipboardItem({ 'image/png': blob })
+        ]);
+        const notice = document.getElementById('notice');
+        notice.style.display = 'inline';
+        setTimeout(() => notice.style.display = 'none', 4000);
+      } catch (err) {
+        alert('Direct clipboard copy blocked by browser. Please right click on the diagram below and choose "Copy Image" or click "Download as PNG"!');
+      }
+    }
+
+    async function downloadPNG() {
+      const blob = await getBlob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Fig_2_1_System_Architecture_Cloud_Voyage.png';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

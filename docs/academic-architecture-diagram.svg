@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="100%" height="100%" style="background-color: #ffffff; font-family: Arial, Helvetica, sans-serif;">
+  <defs>
+    <!-- Solid Black Arrowhead -->
+    <marker id="black-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#000000" />
+    </marker>
+    <!-- Double-ended Arrowhead -->
+    <marker id="double-arrow" viewBox="0 0 10 10" refX="4" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 8 1.5 L 0 5 L 8 8.5 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Outer Frame -->
+  <rect x="15" y="15" width="1070" height="650" fill="#ffffff" stroke="#000000" stroke-width="2.5" />
+
+  <!-- ================= COLUMN HEADINGS ================= -->
+  <text x="145" y="45" font-size="13" font-weight="bold" text-anchor="middle" letter-spacing="0.5">LOGISTICS DATA SOURCES</text>
+  <text x="385" y="45" font-size="13" font-weight="bold" text-anchor="middle" letter-spacing="0.5">API &amp; ROUTING</text>
+  <text x="635" y="45" font-size="13" font-weight="bold" text-anchor="middle" letter-spacing="0.5">PROCESSING &amp; AUDITING</text>
+  <text x="915" y="45" font-size="13" font-weight="bold" text-anchor="middle" letter-spacing="0.5">DATA &amp; AUDIT EVIDENCE</text>
+
+  <!-- ================= COLUMN 1: DATA SOURCES ================= -->
+  <!-- Box 1: Vessel Telematics -->
+  <rect x="35" y="70" width="220" height="42" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="145" y="96" font-size="12" text-anchor="middle">Vessel Telematics &amp; AIS</text>
+  <line x1="255" y1="91" x2="310" y2="91" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Box 2: Cargo Consignments -->
+  <rect x="35" y="130" width="220" height="42" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="145" y="156" font-size="12" text-anchor="middle">Cargo Consignments &amp; Bills</text>
+  <line x1="255" y1="151" x2="310" y2="151" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Box 3: Warehouse Inventory -->
+  <rect x="35" y="190" width="220" height="42" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="145" y="216" font-size="12" text-anchor="middle">Warehouse Inventory (SKUs)</text>
+  <line x1="255" y1="211" x2="310" y2="211" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Box 4: Physical Stock Audits -->
+  <rect x="35" y="250" width="220" height="42" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="145" y="276" font-size="12" text-anchor="middle">Physical Stocktaking Logs</text>
+  <line x1="255" y1="271" x2="310" y2="271" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Box 5: User Credentials & Roles -->
+  <rect x="35" y="310" width="220" height="42" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="145" y="336" font-size="12" text-anchor="middle">User Credentials &amp; Roles</text>
+  <line x1="255" y1="331" x2="310" y2="331" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Box 6: Anti-Bot Canvas Captcha -->
+  <rect x="35" y="370" width="220" height="42" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="145" y="396" font-size="12" text-anchor="middle">Anti-Bot Canvas CAPTCHA</text>
+  <line x1="255" y1="391" x2="310" y2="391" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- ================= COLUMN 2: API & ROUTING ================= -->
+  <!-- Central Routing Tall Box -->
+  <rect x="310" y="70" width="150" height="342" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="385" y="195" font-size="14" font-weight="bold" text-anchor="middle">Spring Boot</text>
+  <text x="385" y="215" font-size="14" font-weight="bold" text-anchor="middle">REST API Layer</text>
+  <text x="385" y="245" font-size="11.5" text-anchor="middle">endpoints,</text>
+  <text x="385" y="263" font-size="11.5" text-anchor="middle">division filters &amp;</text>
+  <text x="385" y="281" font-size="11.5" text-anchor="middle">security policies</text>
+
+  <!-- Arrow from Routing to Processing Engine -->
+  <line x1="460" y1="241" x2="515" y2="241" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Failed requests box (Dashed) -->
+  <line x1="385" y1="412" x2="385" y2="455" stroke="#000000" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#black-arrow)" />
+  <text x="390" y="438" font-size="10" font-style="italic">rejected /</text>
+  <text x="390" y="449" font-size="10" font-style="italic">invalid</text>
+  <rect x="310" y="455" width="150" height="48" fill="#ffffff" stroke="#000000" stroke-width="1.5" stroke-dasharray="5,4" />
+  <text x="385" y="476" font-size="11" text-anchor="middle">Security Error Log &amp;</text>
+  <text x="385" y="492" font-size="11" text-anchor="middle">Exception Handler</text>
+
+  <!-- ================= COLUMN 3: PROCESSING & RESPONSE ================= -->
+  <!-- Top Optional / External Box: Polygon Smart Contract (Dashed) -->
+  <rect x="525" y="65" width="220" height="32" fill="#ffffff" stroke="#000000" stroke-width="1.5" stroke-dasharray="5,4" />
+  <text x="635" y="85" font-size="11.5" text-anchor="middle">Polygon Amoy (Web3 Contract)</text>
+  <line x1="635" y1="97" x2="635" y2="120" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" marker-start="url(#double-arrow)" />
+
+  <!-- Main Processing Box -->
+  <rect x="515" y="120" width="240" height="342" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="635" y="148" font-size="14" font-weight="bold" text-anchor="middle">Application Engine (Java 21)</text>
+
+  <!-- Step 1 Box -->
+  <rect x="527" y="165" width="216" height="52" fill="#f4f4f4" stroke="#000000" stroke-width="1.5" />
+  <text x="635" y="186" font-size="11" font-weight="bold" text-anchor="middle">1 Ingest, validate token &amp;</text>
+  <text x="635" y="204" font-size="11" text-anchor="middle">anti-bot Captcha challenge</text>
+
+  <line x1="635" y1="217" x2="635" y2="232" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Step 2 Box -->
+  <rect x="527" y="232" width="216" height="52" fill="#f4f4f4" stroke="#000000" stroke-width="1.5" />
+  <text x="635" y="253" font-size="11" font-weight="bold" text-anchor="middle">2 Stock reconciliation &amp;</text>
+  <text x="635" y="271" font-size="11" text-anchor="middle">variance: Counted - Expected</text>
+
+  <line x1="635" y1="284" x2="635" y2="299" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Step 3 Box -->
+  <rect x="527" y="299" width="216" height="52" fill="#f4f4f4" stroke="#000000" stroke-width="1.5" />
+  <text x="635" y="320" font-size="11" font-weight="bold" text-anchor="middle">3 Cryptographic SHA-256</text>
+  <text x="635" y="338" font-size="11" text-anchor="middle">digest &amp; audit notarization</text>
+
+  <line x1="635" y1="351" x2="635" y2="366" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Step 4 Box: Human Approval Gate (Dashed) -->
+  <rect x="527" y="366" width="216" height="42" fill="#ffffff" stroke="#000000" stroke-width="1.5" stroke-dasharray="5,4" />
+  <text x="635" y="391" font-size="11" text-anchor="middle">Supervisor Approval Gate (human)</text>
+
+  <!-- ================= COLUMN 4: DATA & EVIDENCE ================= -->
+  <!-- Box 1: MySQL Database -->
+  <rect x="805" y="80" width="220" height="45" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="915" y="100" font-size="11" font-weight="bold" text-anchor="middle">MySQL 8.4 Relational DB</text>
+  <text x="915" y="116" font-size="10" text-anchor="middle">voyages, inventory &amp; audit records</text>
+  <line x1="755" y1="185" x2="805" y2="102" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Box 2: AWS S3 Audit Storage -->
+  <rect x="805" y="150" width="220" height="45" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="915" y="170" font-size="11" font-weight="bold" text-anchor="middle">Amazon S3 Evidence Bucket</text>
+  <text x="915" y="186" font-size="10" text-anchor="middle">audit PDF / JSON report archive</text>
+  <line x1="755" y1="250" x2="805" y2="172" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Box 3: Blockchain Notarization -->
+  <rect x="805" y="220" width="220" height="45" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="915" y="240" font-size="11" font-weight="bold" text-anchor="middle">Polygon Blockchain Ledger</text>
+  <text x="915" y="256" font-size="10" text-anchor="middle">immutable SHA-256 audit Tx proof</text>
+  <line x1="755" y1="325" x2="805" y2="242" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Box 4: CloudWatch Logs -->
+  <rect x="805" y="290" width="220" height="45" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="915" y="310" font-size="11" font-weight="bold" text-anchor="middle">Amazon CloudWatch</text>
+  <text x="915" y="326" font-size="10" text-anchor="middle">system logs, metrics &amp; health alarms</text>
+  <line x1="755" y1="350" x2="805" y2="312" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- Box 5: Alerts & Notifications -->
+  <rect x="805" y="360" width="220" height="45" rx="4" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="915" y="380" font-size="11" font-weight="bold" text-anchor="middle">Exception Alert Notifications</text>
+  <text x="915" y="396" font-size="10" text-anchor="middle">email / SMS for stock variances</text>
+  <line x1="755" y1="390" x2="805" y2="382" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+
+  <!-- ================= BOTTOM SECTION: USER & DASHBOARD ================= -->
+  <!-- Box: Logistics Operator / Auditor / Customer -->
+  <rect x="525" y="555" width="105" height="55" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="577" y="577" font-size="11" text-anchor="middle">Logistics Ops /</text>
+  <text x="577" y="591" font-size="11" text-anchor="middle">Auditor /</text>
+  <text x="577" y="605" font-size="11" text-anchor="middle">Customer</text>
+
+  <!-- Double arrow: User <-> Dashboard -->
+  <line x1="630" y1="582" x2="648" y2="582" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" marker-start="url(#double-arrow)" />
+
+  <!-- Box: React Dashboard -->
+  <rect x="650" y="555" width="130" height="55" rx="3" fill="#f4f4f4" stroke="#000000" stroke-width="1.5" />
+  <text x="715" y="578" font-size="11" font-weight="bold" text-anchor="middle">Dashboard</text>
+  <text x="715" y="595" font-size="11" text-anchor="middle">React 19 / Vite</text>
+  <text x="715" y="607" font-size="9" text-anchor="middle">(Owner &amp; Customer View)</text>
+
+  <!-- Double arrow: Dashboard <-> API Gateway -->
+  <line x1="780" y1="582" x2="805" y2="582" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" marker-start="url(#double-arrow)" />
+
+  <!-- Box: Spring Boot REST API -->
+  <rect x="805" y="555" width="150" height="55" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="880" y="578" font-size="11" font-weight="bold" text-anchor="middle">Spring Boot REST API</text>
+  <text x="880" y="596" font-size="10.5" text-anchor="middle">(Port 8080 authenticated)</text>
+
+  <!-- Feedback line from API Gateway back to Approval Gate -->
+  <path d="M 880 555 L 880 435 L 755 435" fill="none" stroke="#000000" stroke-width="1.5" marker-end="url(#black-arrow)" />
+  <text x="850" y="475" font-size="10" font-style="italic">approve /</text>
+  <text x="850" y="488" font-size="10" font-style="italic">reject variance</text>
+
+  <!-- Bottom Container Tag -->
+  <text x="50" y="640" font-size="10" font-style="italic" fill="#555555">Fig 2.1: End-to-End System Architecture of Cloud Voyage &amp; Inventory Auditing System</text>
+</svg>

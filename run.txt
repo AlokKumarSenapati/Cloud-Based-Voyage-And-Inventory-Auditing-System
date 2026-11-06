@@ -1,0 +1,18 @@
+THIS IS FOR GETTING INTO THE DATABASE
+"C:\Program Files\MySQL\MySQL Server 8.4\bin\mysql.exe" -u root -p
+
+password 
+Senapati@1419
+
+SELECT * FROM users;
+SELECT * FROM locations;
+SELECT * FROM voyage_cargo;
+SELECT * FROM audit_details;
+SELECT * FROM blockchain_audit_records;
+SELECT * FROM inventory_transactions;
+
+TO RUN THE FORNTEND AND THE BACKEND 
+npm.cmd run all
+
+THEN GO TO CHROME AND TYPE 
+http://localhost:8080

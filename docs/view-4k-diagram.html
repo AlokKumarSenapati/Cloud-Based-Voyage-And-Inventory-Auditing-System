@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4K Ultra-HD Architecture Diagram - Cloud Voyage</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: #3b82f6;
+      color: #ffffff;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .btn-bar {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    .notice {
+      color: #4ade80;
+      font-weight: 600;
+      display: none;
+      margin-left: 10px;
+      align-self: center;
+    }
+    .img-card {
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      max-width: 1200px;
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="badge">4K ULTRA HD (3850 x 2380)</span>
+    <h2>Cloud Voyage & Inventory Auditing System</h2>
+    <p style="color:#94a3b8;">Fig 2.1: End-to-End System Architecture (Ready for Academic Project Report)</p>
+  </div>
+
+  <div class="btn-bar">
+    <button class="btn" onclick="copyImageToClipboard()">📋 Copy Image to Clipboard</button>
+    <a href="Fig_2_1_System_Architecture_4K.png" download="Fig_2_1_System_Architecture_4K.png" class="btn" style="background:#059669;">💾 Download 4K PNG File</a>
+    <span class="notice" id="notice">✅ Copied to clipboard! Now press Ctrl + V in MS Word!</span>
+  </div>
+
+  <div class="img-card">
+    <img id="archImg" src="Fig_2_1_System_Architecture_4K.png" alt="4K Architecture Diagram" />
+  </div>
+
+  <script>
+    async function copyImageToClipboard() {
+      try {
+        const response = await fetch('Fig_2_1_System_Architecture_4K.png');
+        const blob = await response.blob();
+        await navigator.clipboard.write([
+          new ClipboardItem({ 'image/png': blob })
+        ]);
+        const notice = document.getElementById('notice');
+        notice.style.display = 'inline';
+        setTimeout(() => notice.style.display = 'none', 5000);
+      } catch (err) {
+        alert('Direct clipboard copy blocked by browser permissions. Please right-click the image below and select "Copy Image"!');
+      }
+    }
+  </script>
+</body>
+</html>

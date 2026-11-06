@@ -1,0 +1,13 @@
+{
+  "name": "cloud-voyage-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloud Voyage & Inventory Auditing System",
+  "scripts": {
+    "all": "npm.cmd run build && npm.cmd run start",
+    "build": "npm.cmd --prefix frontend run build && powershell -Command \"Copy-Item -Path 'frontend\\dist\\*' -Destination 'backend\\src\\main\\resources\\static\\' -Recurse -Force\"",
+    "start": "cd backend && mvnw.cmd spring-boot:run",
+    "backend": "cd backend && mvnw.cmd spring-boot:run",
+    "frontend": "npm.cmd --prefix frontend run dev"
+  }
+}

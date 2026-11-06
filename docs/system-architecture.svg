@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 820" width="100%" height="100%" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Arrow Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
+    </marker>
+    <!-- Card Shadow -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Title Section -->
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">CLOUD VOYAGE &amp; INVENTORY AUDITING SYSTEM</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" font-weight="500" fill="#64748b">System Architecture &amp; High-Level Data Flow Diagram</text>
+
+  <!-- ================= TIER 1: FRONTEND ================= -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="90" width="760" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="70" y="90" width="760" height="36" rx="12" fill="#e0f2fe" />
+    <!-- Flatten bottom corners of header -->
+    <rect x="70" y="114" width="760" height="12" fill="#e0f2fe" />
+    <text x="90" y="115" font-size="14" font-weight="700" fill="#0369a1">1. PRESENTATION TIER: React 19 + Vite SPA (Client Dashboard)</text>
+
+    <!-- Sub boxes inside frontend -->
+    <!-- Box 1A: Owner Portal -->
+    <rect x="95" y="140" width="220" height="84" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2" />
+    <text x="110" y="162" font-size="13" font-weight="700" fill="#1e3a8a">🏢 Owner Logistics Portal</text>
+    <text x="110" y="182" font-size="11" fill="#475569">• Fleet &amp; Voyage Tracking</text>
+    <text x="110" y="198" font-size="11" fill="#475569">• Warehouse Inventory &amp; SKUs</text>
+    <text x="110" y="214" font-size="11" fill="#475569">• Physical Stock Audits</text>
+
+    <!-- Box 1B: Customer Portal -->
+    <rect x="340" y="140" width="220" height="84" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2" />
+    <text x="355" y="162" font-size="13" font-weight="700" fill="#1e3a8a">👤 Customer Tracking Portal</text>
+    <text x="355" y="182" font-size="11" fill="#475569">• Public Consignment Tracking</text>
+    <text x="355" y="198" font-size="11" fill="#475569">• Live Vessel Milestone &amp; ETA</text>
+    <text x="355" y="214" font-size="11" fill="#475569">• Internal Cost Data Protected</text>
+
+    <!-- Box 1C: Dynamic Captcha -->
+    <rect x="585" y="140" width="220" height="84" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2" />
+    <text x="600" y="162" font-size="13" font-weight="700" fill="#1e3a8a">🛡️ Defensive Anti-Bot Layer</text>
+    <text x="600" y="182" font-size="11" fill="#475569">• HTML5 Canvas Distortion</text>
+    <text x="600" y="198" font-size="11" fill="#475569">• Math / Alphanumeric Captcha</text>
+    <text x="600" y="214" font-size="11" fill="#475569">• 10-Minute Expiring Memory TTL</text>
+  </g>
+
+  <!-- ARROW 1 -> 2 -->
+  <line x1="450" y1="240" x2="450" y2="295" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)" />
+  <rect x="360" y="255" width="180" height="24" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="450" y="271" text-anchor="middle" font-size="11" font-weight="600" fill="#1d4ed8">HTTPS / JSON REST API</text>
+
+  <!-- ================= TIER 2: BACKEND ================= -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="300" width="760" height="165" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="70" y="300" width="760" height="36" rx="12" fill="#e0e7ff" />
+    <rect x="70" y="324" width="760" height="12" fill="#e0e7ff" />
+    <text x="90" y="325" font-size="14" font-weight="700" fill="#4338ca">2. APPLICATION SERVICE TIER: Java 21 LTS + Spring Boot 4.x (REST API)</text>
+
+    <!-- Sub boxes inside backend -->
+    <!-- Box 2A: REST Controllers -->
+    <rect x="95" y="348" width="220" height="100" rx="8" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.2" />
+    <text x="110" y="370" font-size="13" font-weight="700" fill="#312e81">🌐 Spring REST Controllers</text>
+    <text x="110" y="390" font-size="11" fill="#475569">• AuthController (/api/auth)</text>
+    <text x="110" y="406" font-size="11" fill="#475569">• VoyageController (/api/voyages)</text>
+    <text x="110" y="422" font-size="11" fill="#475569">• InventoryController (/api/inventory)</text>
+    <text x="110" y="438" font-size="11" fill="#475569">• BlockchainController (/verify)</text>
+
+    <!-- Box 2B: Core Business Logic -->
+    <rect x="340" y="348" width="220" height="100" rx="8" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.2" />
+    <text x="355" y="370" font-size="13" font-weight="700" fill="#312e81">⚙️ Core Business Logic</text>
+    <text x="355" y="390" font-size="11" fill="#475569">• Physical Stock Discrepancy Engine</text>
+    <text x="355" y="406" font-size="11" font-weight="600" fill="#0284c7">  Variance = Counted - Expected</text>
+    <text x="355" y="422" font-size="11" fill="#475569">• Telematics &amp; ETA Progress Math</text>
+    <text x="355" y="438" font-size="11" fill="#475569">• Role-Based Permissions (RBAC)</text>
+
+    <!-- Box 2C: JPA ORM Layer -->
+    <rect x="585" y="348" width="220" height="100" rx="8" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.2" />
+    <text x="600" y="370" font-size="13" font-weight="700" fill="#312e81">🗄️ Persistence Abstraction</text>
+    <text x="600" y="390" font-size="11" fill="#475569">• Spring Data JPA Repositories</text>
+    <text x="600" y="406" font-size="11" fill="#475569">• Hibernate ORM Mapping</text>
+    <text x="600" y="422" font-size="11" fill="#475569">• Transactional Data Consistency</text>
+    <text x="600" y="438" font-size="11" fill="#475569">• Automated Schema Validation</text>
+  </g>
+
+  <!-- SPLIT ARROWS 2 -> 3 and 2 -> 4 -->
+  <!-- Left Arrow to MySQL -->
+  <line x1="280" y1="465" x2="280" y2="520" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)" />
+  <rect x="200" y="480" width="160" height="22" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="280" y="495" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1d4ed8">JDBC / SQL (Port 3306)</text>
+
+  <!-- Right Arrow to Blockchain -->
+  <line x1="620" y1="465" x2="620" y2="520" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)" />
+  <rect x="525" y="480" width="190" height="22" rx="5" fill="#fdf4ff" stroke="#f5d0fe" stroke-width="1" />
+  <text x="620" y="495" text-anchor="middle" font-size="10.5" font-weight="600" fill="#9333ea">SHA-256 Hash Notarization</text>
+
+  <!-- ================= TIER 3 & 4: PERSISTENCE & BLOCKCHAIN ================= -->
+  <!-- Box 3: MySQL Database -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="525" width="365" height="145" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="70" y="525" width="365" height="34" rx="12" fill="#ecfdf5" />
+    <rect x="70" y="547" width="365" height="12" fill="#ecfdf5" />
+    <text x="90" y="548" font-size="13.5" font-weight="700" fill="#047857">3. RELATIONAL PERSISTENCE: MySQL 8.4</text>
+    
+    <text x="95" y="580" font-size="11.5" fill="#334155"><tspan font-weight="700" fill="#0f172a">• users:</tspan> Credentials, Full Name, Roles, Company</text>
+    <text x="95" y="602" font-size="11.5" fill="#334155"><tspan font-weight="700" fill="#0f172a">• voyages:</tspan> Vessel, Route, ETA, Milestones, Progress</text>
+    <text x="95" y="624" font-size="11.5" fill="#334155"><tspan font-weight="700" fill="#0f172a">• inventory_items:</tspan> SKUs, Hub Bins, Cost, Stock Count</text>
+    <text x="95" y="646" font-size="11.5" fill="#334155"><tspan font-weight="700" fill="#0f172a">• inventory_audits:</tspan> Physical Counts, Variances, Notes</text>
+  </g>
+
+  <!-- Box 4: Polygon Blockchain -->
+  <g filter="url(#shadow)">
+    <rect x="465" y="525" width="365" height="145" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="465" y="525" width="365" height="34" rx="12" fill="#faf5ff" />
+    <rect x="465" y="547" width="365" height="12" fill="#faf5ff" />
+    <text x="485" y="548" font-size="13.5" font-weight="700" fill="#7e22ce">4. INTEGRITY TIER: Polygon Amoy Testnet</text>
+    
+    <text x="485" y="580" font-size="11.5" fill="#334155"><tspan font-weight="700" fill="#0f172a">• Smart Contract:</tspan> Immutable Audit Registry Ledger</text>
+    <text x="485" y="602" font-size="11.5" fill="#334155"><tspan font-weight="700" fill="#0f172a">• SHA-256 Fingerprint:</tspan> Cryptographic seal of report</text>
+    <text x="485" y="624" font-size="11.5" fill="#334155"><tspan font-weight="700" fill="#0f172a">• Public Proof:</tspan> External verification without DB leaks</text>
+    <text x="485" y="646" font-size="11.5" fill="#334155"><tspan font-weight="700" fill="#0f172a">• Audit Authenticity:</tspan> Anti-Tamper &amp; Zero Backdating</text>
+  </g>
+
+  <!-- ================= TIER 5: CLOUD & DEVOPS ================= -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="695" width="760" height="95" rx="10" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5" />
+    <text x="95" y="722" font-size="13" font-weight="700" fill="#b45309">☁️ 5. CLOUD INFRASTRUCTURE &amp; CONTAINER ORCHESTRATION (AWS &amp; Docker)</text>
+    
+    <rect x="95" y="734" width="225" height="42" rx="6" fill="#ffffff" stroke="#fcd34d" stroke-width="1" />
+    <text x="108" y="752" font-size="11" font-weight="700" fill="#92400e">Docker &amp; Compose</text>
+    <text x="108" y="768" font-size="10" fill="#78350f">App container (8080) + MySQL (3306)</text>
+
+    <rect x="340" y="734" width="225" height="42" rx="6" fill="#ffffff" stroke="#fcd34d" stroke-width="1" />
+    <text x="353" y="752" font-size="11" font-weight="700" fill="#92400e">AWS RDS (MySQL 8.4)</text>
+    <text x="353" y="768" font-size="10" fill="#78350f">Multi-AZ Managed Relational Database</text>
+
+    <rect x="585" y="734" width="225" height="42" rx="6" fill="#ffffff" stroke="#fcd34d" stroke-width="1" />
+    <text x="598" y="752" font-size="11" font-weight="700" fill="#92400e">AWS S3 &amp; EC2 / Beanstalk</text>
+    <text x="598" y="768" font-size="10" fill="#78350f">Cloud Audit Report Storage &amp; Compute</text>
+  </g>
+</svg>
